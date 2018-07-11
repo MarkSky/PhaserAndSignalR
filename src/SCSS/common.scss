@@ -1,0 +1,109 @@
+a{
+    text-decoration: none;
+}
+input {
+
+	&:active {
+		outline: none;
+	}
+
+	&:focus {
+		outline-style: none;
+	}
+}
+
+.btn {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214*/
+	cursor: pointer;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 14px;
+	font-weight: normal;
+	justify-content: center;
+	margin-bottom: 0; /* For input.btn*/
+	-webkit-tap-highlight-color: rgba(#000, 0);
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+
+	&,
+	&:active,
+	&.active {
+
+		&:focus,
+		&.focus {
+			outline: 5px auto -webkit-focus-ring-color;
+			outline-offset: -2px;
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&.focus {
+		color: #333;
+		text-decoration: none;
+	}
+
+	&:active,
+	&.active {
+		background-image: none;
+		-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+		box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+		outline: 0;
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		cursor: not-allowed;
+		opacity: 0.65;
+	}
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.hide-text {
+	display: inline-block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin centering-elements($horizontal: true, $vertical: true) {
+	position: absolute;
+
+	@if $horizontal and $vertical {
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+
+	@else if $horizontal {
+		left: 50%;
+		-webkit-transform: translate(-50%, 0);
+		transform: translate(-50%, 0);
+	}
+
+	@else if $vertical {
+		top: 50%;
+		-webkit-transform: translate(0, -50%);
+		transform: translate(0, -50%);
+	}
+}
