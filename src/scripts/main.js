@@ -16,10 +16,10 @@ const Home = new Phaser.Class({
         this.load.image('logo', './assets/images/logo.png');
     },
     create() {
-        this.add.image(400, 150, 'logo');
+        this.add.image(640, 360, 'logo');
 
         const GameHubConnection = new signalR.HubConnectionBuilder()
-            .withUrl('http://60.249.36.91/GameServer/signalr')
+            .withUrl('http://10.10.0.20/GameServer/signalr')
             .build();
 
         GameHubConnection.start().catch(err => console.error(err.toString()));
