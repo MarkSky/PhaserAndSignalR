@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import signalR from '@aspnet/signalr';
+import * as signalR from '@aspnet/signalr';
 
 const setHeight = 720;
 const setWidth = 1280;
